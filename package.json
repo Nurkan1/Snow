@@ -1,0 +1,34 @@
+{
+  "name": "snow-overlay",
+  "version": "1.0.0",
+  "description": "Beautiful snow overlay app for Windows - Christmas atmosphere while you work",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable",
+    "build:dir": "electron-builder --win --dir"
+  },
+  "author": "Snow App",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.snow.overlay",
+    "productName": "Snow Overlay",
+    "win": {
+      "target": "portable",
+      "signAndEditExecutable": false
+    },
+    "portable": {
+      "artifactName": "SnowOverlay-Portable.exe"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "assets/**/*"
+    ]
+  }
+}
